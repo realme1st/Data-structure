@@ -70,6 +70,26 @@ class NodeMgmt:
             node.prev = new
             return True
 
+    def insert_after(self,data,after_data):
+        if self.head ==None:
+            self.head = Node(data)
+            return True
+        else:
+            node = self.head
+            while node.data != after_data:
+                node = node.next
+                if node == None:
+                    return False
+
+            new = Node(data)
+            after_new = node.next
+            after_new.prev = new
+            new.next = after_new
+            new.prev = node
+            node.next = new
+            if new.next ==None:
+                self.tail = new
+            
 double_linkedlist = NodeMgmt(0)
 
 for data in range(1,10):
@@ -92,5 +112,9 @@ else:
     print("no data")
 
 double_linkedlist.insert_before(1.5,2)
+
+double_linkedlist.desc()
+
+double_linkedlist.insert_after(1.7,1)
 
 double_linkedlist.desc()
