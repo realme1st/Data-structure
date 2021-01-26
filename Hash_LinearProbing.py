@@ -37,4 +37,4 @@ def read_data(data):
             elif hash_table[index][0] == index_key:
                 return hash_table[index][1]
     else:
-        retrun None
+        return None
