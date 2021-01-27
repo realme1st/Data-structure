@@ -5,7 +5,6 @@ class Node:
         self.right = None
 
 # 이진 탐색 트리에 데이터 넣기
-
 class NoneMgmt:
     def __init__(self,head):
         self.head = head
